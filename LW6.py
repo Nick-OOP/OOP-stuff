@@ -13,19 +13,19 @@ class Course_grades:
 
 while 1:
     print("-----------------------------------------------")
-    print("1. Create a course grade and dump grade to file")
+    print("1. Create a course and dump to file")
     print("2. Open file and print file content in window")
     print("3. Exit")
     print("-----------------------------------------------")
     x = input("Enter your choice: ")
 
     if x == "1":
-        with open("temp.dat", "ab") as file:
+        with open("grades_info.dat", "ab") as file:
             grade = Course_grades()
             grade.create_course_grade()
             pickle.dump(grade, file)
     elif x == "2":
-        with open("temp.dat", "rb") as file:
+        with open("grades_info.dat", "rb") as file:
             while 1:
                 try:
                     course = pickle.load(file)
